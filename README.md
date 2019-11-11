@@ -178,7 +178,7 @@ model = DecisionTreeClassifier(max_depth=4)
 #训练模型
 model.fit(trainX, trainY)
 
-#数预测
+#预测
 y_pred = model.predict(testX)
 from sklearn.metrics import accuracy_score
 
@@ -220,9 +220,15 @@ model = XGBClassifier(learning_rate=0.001,n_estimators=2500,
                                 colsample_bytree=0.7,
                                 scale_pos_weight=1, seed=27,
                                 reg_alpha=0.00006)
+                                
+#训练
 model.fit(trainX, trainY)
+
+#预测
 y_pred = model.predict(testX)
 from sklearn.metrics import accuracy_score
+
+#评分
 res = pd.DataFrame({"Model":['XGBClassifier'],
                     "Accuracy Score": [accuracy_score(y_pred,testY)]})
 Results = Results.append(res)
