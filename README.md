@@ -213,7 +213,7 @@ Results = Results.append(res)
 from xgboost.sklearn import XGBClassifier
 
 #参数解释，learning_rate学习速率，min_child_weight最小叶子节点样本权重和；gamma分裂最小损失函数；
-subsample随机采样比例；colsample_bytree控制每棵树随即采用的特征的占比；scale_pos_weight类别样本十分不均衡时设定为正值加快收敛；
+#subsample随机采样比例；colsample_bytree控制每棵树随即采用的特征的占比；scale_pos_weight类别样本十分不均衡时设定为正值加快收敛；
 model = XGBClassifier(learning_rate=0.001,n_estimators=2500,
                                 max_depth=4, min_child_weight=0,
                                 gamma=0, subsample=0.7,
